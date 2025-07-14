@@ -10,7 +10,7 @@ import static capers.Utils.*;
 public class Dog { // TODO
 
     /** Folder that dogs live in. */
-    static final File DOG_FOLDER = null; // TODO (hint: look at the `join`
+    static final File DOG_FOLDER = join("..",".capers", "dogs"); // TODO (hint: look at the `join`
                                          //      function in Utils)
 
     /** Age of dog. */
@@ -39,8 +39,9 @@ public class Dog { // TODO
      * @return Dog read from file
      */
     public static Dog fromFile(String name) {
-        // TODO (hint: look at the Utils file)
-        return null;
+        File infile = join(DOG_FOLDER, name);
+
+        return readObject(infile, Dog.class);
     }
 
     /**
